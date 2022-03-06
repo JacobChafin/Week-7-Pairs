@@ -1,5 +1,6 @@
 package com.techelevator.services;
 
+import com.techelevator.dao.CatCardDao;
 import org.springframework.stereotype.Component;
 
 import com.techelevator.model.CatFact;
@@ -11,14 +12,17 @@ public class RestCatFactService implements CatFactService {
 
 	@Override
 	public CatFact getFact() {
-
-//		@RequestMapping( path = "https://cat-data.netlify.app/api/facts/random", method = RequestMethod.GET)
-//		public String getPic() {
-//			return catCardDao.setfile(text);
-//
-//		}
-
-		return null;
+		CatFact catfact = new CatFact();
+		catfact.setText("https://cat-data.netlify.app/api/facts/random");
+		return catfact;
 	}
 
+//	@RequestMapping(path = "https://cat-data.netlify.app/api/facts/random", method = RequestMethod.GET)
+//	public CatFact getFact() {
+//		CatFact catfact = new CatFact();
+//		String text = "";
+//
+//		catfact.setText(text);
+//			return catfact;
+//	}
 }
