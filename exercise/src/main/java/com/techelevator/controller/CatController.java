@@ -47,7 +47,7 @@ public class CatController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/api/cards", method = RequestMethod.POST)
-    public boolean addCard(@RequestBody CatCard catCard) {
+    public boolean addCard(@Valid @RequestBody CatCard catCard) {
         return catCardDao.save(catCard);
     }
 
@@ -55,7 +55,7 @@ public class CatController {
     //PUT /api/cards/{id}: Updates a card in the user's collection.
 
     @RequestMapping(path = "/api/cards/{id}", method = RequestMethod.PUT)
-    public boolean updateCard(@RequestBody long id) throws CatCardNotFoundException {
+    public boolean updateCard(@Valid @RequestBody long id) throws CatCardNotFoundException {
         return catCardDao.update(id, catCardDao.get(id));
     }
 
