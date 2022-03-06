@@ -12,12 +12,12 @@ public class RestCatFactService implements CatFactService {
 	@Override
 	public CatFact getFact() {
 
-		@RequestMapping( path = "https://cat-data.netlify.app/api/facts/random", method = RequestMethod.GET)
-		public String getPic() {
-			return catCardDao.setfile(text);
+//		@RequestMapping( path = "https://cat-data.netlify.app/api/facts/random", method = RequestMethod.GET)
+//		public String getPic() {
+//			return catCardDao.setfile(text);
+//
+//		}
 
-		}
-		https://cat-data.netlify.app/api/facts/random
 		return null;
 	}
 

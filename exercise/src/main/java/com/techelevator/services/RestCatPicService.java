@@ -11,10 +11,10 @@ public class RestCatPicService implements CatPicService {
 
 	@Override
 	public CatPic getPic() {
-		@RequestMapping( path = "https://cat-data.netlify.app/images/cat-with-bananas-527x600.jpg", method = RequestMethod.GET)
-				public String getPic() {
-			return catCardDao.setfile(file);
-		}
+//		@RequestMapping( path = "https://cat-data.netlify.app/images/cat-with-bananas-527x600.jpg", method = RequestMethod.GET)
+//				public String getPic() {
+//			return catCardDao.setfile(file);
+//		}
 
 		return null;
 	}
