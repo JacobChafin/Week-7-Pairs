@@ -6,23 +6,17 @@ import org.springframework.stereotype.Component;
 import com.techelevator.model.CatFact;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class RestCatFactService implements CatFactService {
+    private final RestTemplate restTemplate = new RestTemplate();
 
-	@Override
-	public CatFact getFact() {
-		CatFact catfact = new CatFact();
-		catfact.setText("https://cat-data.netlify.app/api/facts/random");
-		return catfact;
-	}
+    @Override
+    public CatFact getFact() {
+        CatFact catFact = null;
+        catFact = restTemplate.getForObject("https://cat-data.netlify.app/api/facts/random", CatFact.class);
+        return catFact;
+    }
 
-//	@RequestMapping(path = "https://cat-data.netlify.app/api/facts/random", method = RequestMethod.GET)
-//	public CatFact getFact() {
-//		CatFact catfact = new CatFact();
-//		String text = "";
-//
-//		catfact.setText(text);
-//			return catfact;
-//	}
 }
