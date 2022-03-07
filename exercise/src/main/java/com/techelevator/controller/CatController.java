@@ -51,19 +51,19 @@ public class CatController {
         catCardDao.save(catCard);
     }
 
-//    //PUT /api/cards/{id}: Updates a card in the user's collection.
-//    //NEEDS WORK
-//    @RequestMapping(path = "/api/cards/{id}", method = RequestMethod.PUT)
-//    public boolean updateCard(@Valid @RequestBody long id)  {
-//        return catCardDao.update(id, catCardDao.get(id));
-//    }
+    //PUT /api/cards/{id}: Updates a card in the user's collection.
 
-//    //DELETE /api/cards/{id}: Removes a card from the user's collection.
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    @RequestMapping(path = "/api/cards/{id}", method = RequestMethod.DELETE)
-//    public  void delete(@PathVariable long id) {
-//        catCardDao.delete(id);
-//    }
+    @RequestMapping(path = "/api/cards/{id}", method = RequestMethod.PUT)
+    public void updateCard(@Valid @RequestBody CatCard changedCard, @PathVariable long id) throws CatCardNotFoundException {
+        catCardDao.update(id, changedCard);
+    }
+
+    //DELETE /api/cards/{id}: Removes a card from the user's collection.
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @RequestMapping(path = "/api/cards/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable long id) throws CatCardNotFoundException{
+        catCardDao.delete(id);
+    }
 
 }
 
